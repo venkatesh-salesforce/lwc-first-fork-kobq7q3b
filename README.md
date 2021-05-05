@@ -48,7 +48,12 @@ Lightning Web Components uses modules (built-in modules were introduced in ECMAS
 
 Begin the module with the import statement and specify the functionality of the module that your component uses.
 
+
 The import statement indicates the JavaScript uses the LightningElement functionality from the lwc module.
+
+```
+
+
 
 // import module elements
 import { LightningElement} from 'lwc';
@@ -62,6 +67,9 @@ export default class App extends LightningElement {
         }, 3000);
     }
 }
+
+```
+
 
 LightningElement is the base class for Lightning web components, which allows us to use connectedCallback().
 The connectedCallback() method is one of our lifecycle hooks. You’ll learn more about lifecycle hooks in the next section. For now, know that the method is triggered when a component is inserted in the document object model (DOM). In this case, it starts the timer.
@@ -82,6 +90,7 @@ Respond to any of these lifecycle events using callback methods. For example, th
 
 In the JavaScript file we used to test our conditional rendering, we used the connectedCallback() method to automatically execute code when the component is inserted into the DOM. The code waits 3 seconds, then sets ready to true.
 
+```
 import { LightningElement } from 'lwc';
 export default class App extends LightningElement {
     ready = false;
@@ -91,6 +100,9 @@ export default class App extends LightningElement {
         }, 3000);
     }
 }
+
+```
+
 
 
 ##  Note:
@@ -106,10 +118,15 @@ Decorators are often used in JavaScript to modify the behavior of a property or 
 
 To use a decorator, import it from the lwc module and place it before the property or function.
 
+```
+
 import { LightningElement, api } from 'lwc';
 export default class MyComponent extends LightningElement{
     @api message;
 }
+
+```
+
 You can import multiple decorators, but a single property or function can have only one decorator. For example, a property can’t have @api and @wire decorators.
 
 ##  Examples of Lightning Web Components decorators include:
